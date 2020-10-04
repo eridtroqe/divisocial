@@ -1,0 +1,19 @@
+@import "~@angular/material/theming";
+
+$divisocial-typography: mat-typography-config(
+  $font-family: "Montserrat",
+);
+
+@include mat-core($divisocial-typography);
+
+$divisocial-primary: mat-palette($mat-purple, 600);
+$divisocial-accent: mat-palette($mat-yellow, A400);
+
+$divisocial-warn: mat-palette($mat-red, A400);
+
+$divisocial-theme: mat-light-theme(
+  $divisocial-primary,
+  $divisocial-accent,
+  $divisocial-warn
+);
+@include angular-material-theme($divisocial-theme);

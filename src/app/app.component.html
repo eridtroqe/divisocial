@@ -1,3 +1,11 @@
-<button mat-raised-button color="primary">Create</button>
-<button mat-raised-button color="warn">Create</button>
-<button mat-raised-button color="accent">Create</button>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation" position="end" fixedInViewport='true'>
+    <app-sidenav (closeSidenav)="sidenav.close()"></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header (sidenavToggle)="sidenav.toggle()" class="fixed-top"></app-header>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

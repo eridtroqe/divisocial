@@ -1,0 +1,18 @@
+<mat-nav-list>
+  <a mat-list-item [routerLink]="[ '/']" (click)="onClose()">
+    Home
+  </a>
+  <a *ngIf="isAuth" mat-list-item [routerLink]="[ '/create']" (click)="onClose()">
+    New Post
+  </a>
+  <a *ngIf="!isAuth" mat-list-item [routerLink]="['/auth/login']" (click)="onClose()">
+    Login
+  </a>
+  <a *ngIf="!isAuth" mat-list-item [routerLink]="[ '/auth/signup']" (click)="onClose()">
+    Signup
+  </a>
+  <a *ngIf="isAuth" mat-list-item (click)="onLogout()">
+    <mat-icon>power_settings_new</mat-icon>&nbsp;&nbsp;
+    Logout
+  </a>
+</mat-nav-list>

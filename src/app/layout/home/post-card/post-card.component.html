@@ -1,0 +1,23 @@
+<mat-card class="mb-4">
+  <mat-card-header>
+    <mat-card-title>
+      {{ post.title | uppercase}}
+    </mat-card-title>
+    <mat-card-subtitle class="d-flex align-items-center my-2">
+      <mat-icon inline>calendar_today</mat-icon> &nbsp;
+      <span class="align-middle">{{ post.date | date }}</span>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <owl-carousel-o [options]="customOptions">
+
+    <ng-template *ngFor="let slide of post.imagePath" carouselSlide [id]="slide">
+      <div class="img-container">
+        <img [src]="slide" [alt]="post.title" [title]="post.title" class="main-img">
+      </div>
+    </ng-template>
+
+  </owl-carousel-o>
+  <mat-card-content>
+    <p class="mt-2">{{ post.content }}</p>
+  </mat-card-content>
+</mat-card>
